@@ -7,5 +7,12 @@ module.exports = (api) => {
             '@babel/preset-react',
         ],
         plugins: ['@babel/plugin-transform-runtime'],
+        env: {
+            test: {
+                presets: [
+                    '@babel/preset-env'
+                ]
+            }
+        }
     };
 };

@@ -3,5 +3,15 @@ module.exports = {
         browser: true,
     },
     parser: 'babel-eslint',
-    'extends': '@paysera',
+    'extends': [
+        '@paysera'
+    ],
+    overrides: [
+        {
+            files: ["*.test.js", "*.test.jsx"],
+            env: {
+                jest: true
+            },
+        },
+    ]
 };
