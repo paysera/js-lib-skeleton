@@ -1,14 +1,30 @@
 {
   "name": "js-lib-skeleton",
   "version": "1.0.0",
+  "main": "dist/umd/main.js",
+  "module": "dist/es/index.js",
   "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run build:umd && npm run build:es",
+    "build:umd": "webpack --mode production",
+    "build:es": "babel ./src --out-dir ./dist/es"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
     "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "rimraf": "^3.0.2",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1",
+    "webpack-node-externals": "^2.5.2"
   }
 }
