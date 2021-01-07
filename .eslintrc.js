@@ -8,10 +8,16 @@ module.exports = {
     ],
     overrides: [
         {
-            files: ["*.test.js", "*.test.jsx"],
+            files: ['*.test.js', '*.test.jsx'],
             env: {
-                jest: true
+                jest: true,
             },
+            'extends': [
+                'plugin:jest/recommended',
+                'plugin:jest/style',
+                'plugin:jest-dom/recommended',
+                'plugin:testing-library/recommended',
+            ],
         },
     ]
 };
