@@ -5,11 +5,16 @@
   "license": "MIT",
   "main": "dist/umd/main.js",
   "module": "dist/es/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && npm run build:umd && npm run build:es",
     "build:umd": "webpack --mode production",
     "build:es": "babel ./src --out-dir ./dist/es --ignore '**/__tests__/**'",
+    "prepublishOnly": "npm run lint && npm run test && npm run build",
     "test": "jest",
     "lint": "eslint src/**/*.{js,jsx}"
   },
